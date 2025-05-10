@@ -930,6 +930,10 @@ body{
   --tw-bg-opacity: 1;
   background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1));
 }
+.bg-\[\#5cafe7\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(92 175 231 / var(--tw-bg-opacity, 1));
+}
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1112,6 +1116,14 @@ body{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
+.text-blue-500{
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+.text-gray-500{
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
 .placeholder-\[\#B0B0B0\]::-moz-placeholder{
   --tw-placeholder-opacity: 1;
   color: rgb(176 176 176 / var(--tw-placeholder-opacity, 1));
@@ -1233,6 +1245,10 @@ body{
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.hover\:underline:hover{
+  text-decoration-line: underline;
+}
+
 .hover\:opacity-90:hover{
   opacity: 0.9;
 }
@@ -1251,6 +1267,11 @@ body{
 .focus\:ring-\[\#2290ff\]:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(34 144 255 / var(--tw-ring-opacity, 1));
+}
+
+.focus\:ring-\[\#5cafe7\]:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(92 175 231 / var(--tw-ring-opacity, 1));
 }
 
 .disabled\:opacity-50:disabled{

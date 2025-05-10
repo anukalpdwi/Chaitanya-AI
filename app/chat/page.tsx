@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useUser, UserButton } from "@clerk/nextjs";
 import { Send, Bot, History, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link";
 
 interface Message {
   role: "user" | "assistant";
@@ -25,7 +25,9 @@ export default function ChatPage() {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    if (messages.length > 0) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -91,14 +93,12 @@ export default function ChatPage() {
   };
 
   const userName = user?.firstName || "User";
-  const userProfilePicture = user?.imageUrl || "/default-profile.png"; // Fallback to a default image if no profile picture
+  const userProfilePicture = user?.imageUrl || "/default-profile.png";
 
   return (
-    <div className="flex flex-col h-screen bg-[#1a202c] text-white font-['Inter',sans-serif] text-base pb-16">
+    <div className="flex flex-col h-screen bg-[#1a202c] text-white font-['Inter',sans-serif] text-base">
       {/* Header */}
-      <header
-        className="flex justify-between items-center p-4 bg-[#1a202c] fixed top-0 left-0 w-full z-50"
-      >
+      <header className="flex justify-between items-center p-4 bg-[#1a202c] fixed top-0 left-0 w-full z-50">
         <div className="flex items-center space-x-2 ml-5">
           <Link href="/">
             <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#c0d7ff] to-[#5cafe7] bg-clip-text text-transparent font-['Helvetica',sans-serif] cursor-pointer">
@@ -194,7 +194,7 @@ export default function ChatPage() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Form */}
+      {/* Input Form and Footer */}
       <div className="p-4 bg-[#1a202c] fixed bottom-0 left-0 w-full border-t border-gray-700">
         <div className="max-w-4xl mx-auto relative">
           <textarea
@@ -206,7 +206,7 @@ export default function ChatPage() {
             }}
             onKeyDown={handleKeyDown}
             placeholder="Ask Chaitanya anything..."
-            className="w-full bg-[#2F2F2F] text-white rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#2290ff] resize-none min-h-[50px] max-h-[200px] placeholder-[#B0B0B0] text-base"
+            className="w-full bg-[#2F2F2F] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5cafe7] resize-none min-h-[50px] max-h-[200px] placeholder-[#B0B0B0] text-base border border-gray-600"
             rows={1}
           />
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex space-x-2">
@@ -215,11 +215,21 @@ export default function ChatPage() {
               disabled={isLoading || !input.trim()}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="p-2 rounded-full hover:bg-[#FF5722] disabled:opacity-50"
+              className="p-2 rounded-full bg-[#5cafe7] disabled:opacity-50"
             >
-              <ArrowUp className="w-6 h-6 text-[#ffffff]" />
+              <ArrowUp className="w-6 h-6 text-white" />
             </motion.button>
           </div>
+        </div>
+        <div className="text-center text-sm text-gray-500 mt-2">
+          By Messaging Chanakya AI, you agree to our{" "}
+          <Link href="/terms" className="text-blue-500 hover:underline">
+            Terms
+          </Link>{" "}
+          and have read our{" "}
+          <Link href="/privacy" className="text-blue-500 hover:underline">
+            Privacy Policy
+          </Link>.
         </div>
       </div>
     </div>
