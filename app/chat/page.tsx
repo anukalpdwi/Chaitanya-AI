@@ -105,7 +105,7 @@ export default function ChatPage() {
               <img
                 src="/logo.png" // Path to the logo in the public folder
                 alt="Logo"
-                className="w-20 h-20 md:w-24 md:h-24" // Adjust size for responsiveness
+                className="w-10 h-10 md:w-12 md:h-12" // Adjust size for responsiveness
               />
               <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#f5b187] to-[#7E22CE] bg-clip-text text-transparent font-['Helvetica',sans-serif]">
                 Chaitanya AI
@@ -233,7 +233,7 @@ export default function ChatPage() {
           </div>
         </div>
         <div className="text-center text-sm text-gray-500 mt-2">
-          By Messaging Chanakya AI, you agree to our{" "}
+          By Messaging Chaitanya AI, you agree to our{" "}
           <Link href="/terms" className="text-blue-500 hover:underline">
             Terms
           </Link>{" "}
