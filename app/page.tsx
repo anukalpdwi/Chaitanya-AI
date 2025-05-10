@@ -116,9 +116,11 @@ export default function Home() {
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
               <Link href="/features" className="text-gray-300 hover:text-white transition-colors">Features</Link>
-              <Link href="/sign-in" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
+              <Link href="/sign-in?redirect=/chat" className="text-gray-300 hover:text-white transition-colors">
+                Sign In
+              </Link>
               <Link
-                href="/sign-up"
+                href="/sign-up?redirect=/chat"
                 className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-all transform hover:scale-105"
               >
                 Get Started
@@ -138,9 +140,11 @@ export default function Home() {
             <div className="md:hidden mt-4 space-y-4 bg-black/80 p-6 rounded-lg backdrop-blur-md">
               <Link href="/about" className="block text-gray-300 hover:text-white transition-colors">About</Link>
               <Link href="/features" className="block text-gray-300 hover:text-white transition-colors">Features</Link>
-              <Link href="/sign-in" className="block text-gray-300 hover:text-white transition-colors">Sign In</Link>
+              <Link href="/sign-in?redirect=/chat" className="block text-gray-300 hover:text-white transition-colors">
+                Sign In
+              </Link>
               <Link
-                href="/sign-up"
+                href="/sign-up?redirect=/chat"
                 className="block bg-purple-600 text-white px-6 py-2 rounded-full text-center hover:bg-purple-700 transition-all transform hover:scale-105"
               >
                 Get Started
@@ -170,7 +174,7 @@ export default function Home() {
               <button
                 onClick={() => {
                   if (!user) {
-                    router.push("/sign-in"); // Redirect to sign-in page if not logged in
+                    router.push(`/sign-in?redirect=/chat`); // Redirect to sign-in with redirect query
                   } else {
                     router.push("/chat"); // Redirect to chat page if logged in
                   }

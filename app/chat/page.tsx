@@ -135,7 +135,9 @@ export default function ChatPage() {
               </span>
               .
             </h2>
-            <p className="text-[5vh] text-[#D3D3D3] mt-2">How can I help you today?</p>
+            <p className="text-[4vh] text-[#D3D3D3] mt-4 px-4 text-center break-words">
+              How can I help you today?
+            </p>
           </div>
         ) : (
           <AnimatePresence initial={false}>
@@ -191,11 +193,9 @@ export default function ChatPage() {
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#2F2F2F] flex items-center justify-center">
                   <Bot className="w-6 h-6 text-[#D3D3D3]" />
                 </div>
-                <div className="bg-[#2F2F2F] p-4 rounded-2xl">
+                <div className="bg-[#2F2F2F] p-4 rounded-2xl">  
                   <div className="flex space-x-2">
                     <div className="w-2 h-2 bg-[#D3D3D3] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <div className="w-2 h-2 bg-[#D3D3D3] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <div className="w-2 h-2 bg-[#D3D3D3] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
                 </div>
               </motion.div>
