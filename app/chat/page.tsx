@@ -94,15 +94,14 @@ export default function ChatPage() {
   const userProfilePicture = user?.imageUrl || "/default-profile.png"; // Fallback to a default image if no profile picture
 
   return (
-    <div className="flex flex-col h-screen bg-[#1a202c] text-white font-['Inter',sans-serif] text-base">
+    <div className="flex flex-col h-screen bg-[#1a202c] text-white font-['Inter',sans-serif] text-base pb-16">
       {/* Header */}
       <header
-        className="flex justify-between items-center p-4 bg-[#1a202c]"
-        style={{ marginTop: "1rem" }} // Adjust the value as needed
+        className="flex justify-between items-center p-4 bg-[#1a202c] fixed top-0 left-0 w-full z-50"
       >
-        <div className="flex items-center space-x-2 ml-8">
+        <div className="flex items-center space-x-2 ml-5">
           <Link href="/">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-[#c0d7ff] to-[#5cafe7] bg-clip-text text-transparent font-['Helvetica',sans-serif] cursor-pointer">
+            <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#c0d7ff] to-[#5cafe7] bg-clip-text text-transparent font-['Helvetica',sans-serif] cursor-pointer">
               Chaitanya AI
             </h1>
           </Link>
@@ -111,7 +110,7 @@ export default function ChatPage() {
           <UserButton
             appearance={{
               elements: {
-                avatarBox: "w-10 h-10",
+                avatarBox: "w-8 h-8 md:w-10 md:h-10",
               },
             }}
           />
@@ -119,7 +118,7 @@ export default function ChatPage() {
       </header>
 
       {/* Messages or Greeting */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-8">
+      <div className="flex-1 overflow-y-auto p-6 space-y-8 mt-16">
         {messages.length === 0 ? (
           <div className="text-center mt-20">
             <h2 className="text-3xl font-bold text-[#ffffff]">
@@ -196,7 +195,7 @@ export default function ChatPage() {
       </div>
 
       {/* Input Form */}
-      <div className="p-4 bg-[#1a202c] border-t border-gray-700">
+      <div className="p-4 bg-[#1a202c] fixed bottom-0 left-0 w-full border-t border-gray-700">
         <div className="max-w-4xl mx-auto relative">
           <textarea
             ref={textareaRef}
