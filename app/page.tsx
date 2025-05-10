@@ -97,7 +97,20 @@ export default function Home() {
       <div className="relative z-10">
         <nav className="container mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-heading font-bold text-white">Chaitanya AI</div>
+            <div className="flex items-center space-x-2 ml-5">
+               <Link href="/">
+    <div className="flex items-center space-x-2 cursor-pointer">
+      <img
+        src="/logo.png"
+        alt="Logo"
+        className="w-24 h-24"
+      />
+      <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#f5b187] to-[#7E22CE] bg-clip-text text-transparent font-['Helvetica',sans-serif]">
+        Chaitanya AI
+      </h1>
+    </div>
+  </Link>
+            </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
@@ -144,7 +157,7 @@ export default function Home() {
               className="text-5xl md:text-7xl font-heading font-bold text-white mb-8"
             >
               Experience the Future of{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-600 to-indigo-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f5b187] to-indigo-600">
                 AI Conversation
               </span>
             </motion.h1>

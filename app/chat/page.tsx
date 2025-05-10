@@ -101,9 +101,16 @@ export default function ChatPage() {
       <header className="flex justify-between items-center p-4 bg-[#1a202c] fixed top-0 left-0 w-full z-50">
         <div className="flex items-center space-x-2 ml-5">
           <Link href="/">
-            <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#c0d7ff] to-[#5cafe7] bg-clip-text text-transparent font-['Helvetica',sans-serif] cursor-pointer">
-              Chaitanya AI
-            </h1>
+            <div className="flex items-center space-x-2 cursor-pointer">
+              <img
+                src="/logo.png" // Path to the logo in the public folder
+                alt="Logo"
+                className="w-20 h-20 md:w-24 md:h-24" // Adjust size for responsiveness
+              />
+              <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#f5b187] to-[#7E22CE] bg-clip-text text-transparent font-['Helvetica',sans-serif]">
+                Chaitanya AI
+              </h1>
+            </div>
           </Link>
         </div>
         <div className="relative">
@@ -121,8 +128,12 @@ export default function ChatPage() {
       <div className="flex-1 overflow-y-auto p-6 space-y-8 mt-16">
         {messages.length === 0 ? (
           <div className="text-center mt-20">
-            <h2 className="text-3xl font-bold text-[#ffffff]">
-              {getGreeting()}, {userName}.
+            <h2 className="text-3xl font-bold text-white">
+              {getGreeting()},{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f5b187] to-indigo-600">
+                {userName}
+              </span>
+              .
             </h2>
             <p className="text-[5vh] text-[#D3D3D3] mt-2">How can I help you today?</p>
           </div>
