@@ -63,26 +63,6 @@ module.exports = require("next/dist/compiled/next-server/app-route.runtime.dev.j
 
 /***/ }),
 
-/***/ "buffer":
-/*!*************************!*\
-  !*** external "buffer" ***!
-  \*************************/
-/***/ ((module) => {
-
-module.exports = require("buffer");
-
-/***/ }),
-
-/***/ "crypto":
-/*!*************************!*\
-  !*** external "crypto" ***!
-  \*************************/
-/***/ ((module) => {
-
-module.exports = require("crypto");
-
-/***/ }),
-
 /***/ "fs":
 /*!*********************!*\
   !*** external "fs" ***!
@@ -120,16 +100,6 @@ module.exports = require("https");
 /***/ ((module) => {
 
 module.exports = require("path");
-
-/***/ }),
-
-/***/ "process":
-/*!**************************!*\
-  !*** external "process" ***!
-  \**************************/
-/***/ ((module) => {
-
-module.exports = require("process");
 
 /***/ }),
 
@@ -193,16 +163,6 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ "node:buffer":
-/*!******************************!*\
-  !*** external "node:buffer" ***!
-  \******************************/
-/***/ ((module) => {
-
-module.exports = require("node:buffer");
-
-/***/ }),
-
 /***/ "node:crypto":
 /*!******************************!*\
   !*** external "node:crypto" ***!
@@ -223,36 +183,6 @@ module.exports = require("node:fs");
 
 /***/ }),
 
-/***/ "node:http":
-/*!****************************!*\
-  !*** external "node:http" ***!
-  \****************************/
-/***/ ((module) => {
-
-module.exports = require("node:http");
-
-/***/ }),
-
-/***/ "node:https":
-/*!*****************************!*\
-  !*** external "node:https" ***!
-  \*****************************/
-/***/ ((module) => {
-
-module.exports = require("node:https");
-
-/***/ }),
-
-/***/ "node:net":
-/*!***************************!*\
-  !*** external "node:net" ***!
-  \***************************/
-/***/ ((module) => {
-
-module.exports = require("node:net");
-
-/***/ }),
-
 /***/ "node:path":
 /*!****************************!*\
   !*** external "node:path" ***!
@@ -260,16 +190,6 @@ module.exports = require("node:net");
 /***/ ((module) => {
 
 module.exports = require("node:path");
-
-/***/ }),
-
-/***/ "node:process":
-/*!*******************************!*\
-  !*** external "node:process" ***!
-  \*******************************/
-/***/ ((module) => {
-
-module.exports = require("node:process");
 
 /***/ }),
 
@@ -290,36 +210,6 @@ module.exports = require("node:stream");
 /***/ ((module) => {
 
 module.exports = require("node:stream/web");
-
-/***/ }),
-
-/***/ "node:url":
-/*!***************************!*\
-  !*** external "node:url" ***!
-  \***************************/
-/***/ ((module) => {
-
-module.exports = require("node:url");
-
-/***/ }),
-
-/***/ "node:util":
-/*!****************************!*\
-  !*** external "node:util" ***!
-  \****************************/
-/***/ ((module) => {
-
-module.exports = require("node:util");
-
-/***/ }),
-
-/***/ "node:zlib":
-/*!****************************!*\
-  !*** external "node:zlib" ***!
-  \****************************/
-/***/ ((module) => {
-
-module.exports = require("node:zlib");
 
 /***/ }),
 
@@ -350,7 +240,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/node-fetch-native","vendor-chunks/@clerk","vendor-chunks/@peculiar","vendor-chunks/asn1js","vendor-chunks/webcrypto-core","vendor-chunks/pvtsutils","vendor-chunks/tslib","vendor-chunks/pvutils","vendor-chunks/cookie","vendor-chunks/deepmerge","vendor-chunks/map-obj","vendor-chunks/no-case","vendor-chunks/lower-case","vendor-chunks/snakecase-keys","vendor-chunks/snake-case","vendor-chunks/dot-case","vendor-chunks/formdata-node","vendor-chunks/openai","vendor-chunks/form-data-encoder","vendor-chunks/whatwg-url","vendor-chunks/agentkeepalive","vendor-chunks/tr46","vendor-chunks/web-streams-polyfill","vendor-chunks/node-fetch","vendor-chunks/webidl-conversions","vendor-chunks/ms","vendor-chunks/humanize-ms","vendor-chunks/event-target-shim","vendor-chunks/abort-controller"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fchat%2Froute&page=%2Fapi%2Fchat%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fchat%2Froute.ts&appDir=C%3A%5CUsers%5Canuka%5CDocuments%5Cchaitanya%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5Canuka%5CDocuments%5Cchaitanya&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/@clerk","vendor-chunks/next","vendor-chunks/tslib","vendor-chunks/cookie","vendor-chunks/map-obj","vendor-chunks/no-case","vendor-chunks/lower-case","vendor-chunks/snakecase-keys","vendor-chunks/snake-case","vendor-chunks/dot-case","vendor-chunks/formdata-node","vendor-chunks/openai","vendor-chunks/form-data-encoder","vendor-chunks/whatwg-url","vendor-chunks/agentkeepalive","vendor-chunks/tr46","vendor-chunks/web-streams-polyfill","vendor-chunks/node-fetch","vendor-chunks/webidl-conversions","vendor-chunks/ms","vendor-chunks/humanize-ms","vendor-chunks/event-target-shim","vendor-chunks/abort-controller"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fchat%2Froute&page=%2Fapi%2Fchat%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fchat%2Froute.ts&appDir=C%3A%5CUsers%5Canuka%5CDocuments%5Cchaitanya%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5Canuka%5CDocuments%5Cchaitanya&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();
