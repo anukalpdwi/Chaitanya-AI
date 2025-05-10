@@ -7,6 +7,8 @@ import type { Engine } from "@tsparticles/engine";
 import { loadFull } from "tsparticles";
 import { ArrowRight, MessageSquare, Shield, Zap } from "lucide-react";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs"; // Import Clerk's useUser hook
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 
 const particlesConfig = {
   particles: {
@@ -86,6 +88,8 @@ export default function Home() {
   }, []);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user } = useUser(); // Get the current user
+  const router = useRouter(); // Initialize the router
 
   return (
     <main className="min-h-screen relative overflow-hidden">
@@ -150,13 +154,19 @@ export default function Home() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col md:flex-row items-center justify-center gap-6">
-              <Link
-                href="/chat"
+              <button
+                onClick={() => {
+                  if (!user) {
+                    router.push("/sign-in"); // Redirect to sign-in page if not logged in
+                  } else {
+                    router.push("/chat"); // Redirect to chat page if logged in
+                  }
+                }}
                 className="group bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20"
               >
                 Start Chatting
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </button>
               <Link
                 href="/features"
                 className="text-white border border-purple-500/30 px-8 py-4 rounded-full hover:bg-purple-500/10 transition-all backdrop-blur-sm"
