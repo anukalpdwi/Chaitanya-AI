@@ -5,6 +5,7 @@ import { useUser, UserButton } from "@clerk/nextjs";
 import { Send, Bot, History, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import axios from "axios"; // Add axios for making HTTP requests
 
 interface Message {
   role: "user" | "assistant";
@@ -103,9 +104,9 @@ export default function ChatPage() {
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer">
               <img
-                src="/logo.png" // Path to the logo in the public folder
+                src="/logo.png"
                 alt="Logo"
-                className="w-10 h-10 md:w-12 md:h-12" // Adjust size for responsiveness
+                className="w-10 h-10 md:w-12 md:h-12"
               />
               <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#f5b187] to-[#7E22CE] bg-clip-text text-transparent font-['Helvetica',sans-serif]">
                 Chaitanya AI
@@ -125,7 +126,7 @@ export default function ChatPage() {
       </header>
 
       {/* Messages or Greeting */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-8 mt-16">
+      <div className="flex-1 overflow-y-auto p-6 space-y-8 mt-16 pb-32">
         {messages.length === 0 ? (
           <div className="text-center mt-20">
             <h2 className="text-3xl font-bold text-white">
@@ -193,7 +194,7 @@ export default function ChatPage() {
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#2F2F2F] flex items-center justify-center">
                   <Bot className="w-6 h-6 text-[#D3D3D3]" />
                 </div>
-                <div className="bg-[#2F2F2F] p-4 rounded-2xl">  
+                <div className="bg-[#2F2F2F] p-4 rounded-2xl">
                   <div className="flex space-x-2">
                     <div className="w-2 h-2 bg-[#D3D3D3] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                   </div>
