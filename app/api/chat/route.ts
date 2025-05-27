@@ -1,6 +1,6 @@
 import { OpenAI } from "openai";
 import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server"; // ✅ Correct import for API routes
+import { auth } from "@clerk/nextjs/server";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -8,7 +8,7 @@ const openai = new OpenAI({
 
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth(); // ✅ Await the async function
+    const { userId } = auth(); // <-- FIXED: removed await
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       message: response.choices[0].message.content,
     });
   } catch (error) {
-    console.error("[CHAT_ERROR]", error);
+    console.error("[CHAT_ERROR]", error?.response?.data || error.message || error);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }
