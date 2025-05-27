@@ -8,7 +8,8 @@ const openai = new OpenAI({
 
 export async function POST(req: Request) {
   try {
-    const { userId } = auth(); // <-- FIXED: removed await
+    const authData = auth(); // <-- Call auth() and store the result
+    const userId = authData.userId; // <-- Get userId from the result
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
